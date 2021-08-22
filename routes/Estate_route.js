@@ -54,19 +54,19 @@ router.get('/estate/show', function (req, res) {
     })
 })
 
-// router.get('/estate/single/:id', function (req, res) {
-//     // console.log("this is for showing data")
-//     // res.send("test show")
-//     //console.log(req.body)
-//     Estate.findOne({ _id: req.params.id })
-//         .then(function (data) {
-//             console.log(data);
-//             res.status(200).json(data);
-//         })
-//         .catch(function (e) {
-//             res.status(500).json({ error: e })
-//         })
-// })
+router.get('/estate/single/:id', function (req, res) {
+    // console.log("this is for showing data")
+    // res.send("test show")
+    //console.log(req.body)
+    Estate.findOne({ _id: req.params.id })
+        .then(function (data) {
+            console.log(data);
+            res.status(200).json(data);
+        })
+        .catch(function (e) {
+            res.status(500).json({ error: e })
+        })
+})
 
 
 // for delete
