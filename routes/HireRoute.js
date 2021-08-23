@@ -48,13 +48,13 @@ router.get('/register_show', function (req, res) {
     })
 })
 
-// // for delete
-// router.delete('/register_delete/:id', auth.verifyUser, function (req, res) {
-//     //delete code
-//     const id = req.params.id;
-//     Hire.deleteOne({ _id: id }).then(function () {
-//         res.send("Deleted !")
-//     })
+// for delete
+router.delete('/register_delete/:id', auth.verifyUser, function (req, res) {
+    //delete code
+    const id = req.params.id;
+    Hire.deleteOne({ _id: id }).then(function () {
+        res.send("Deleted !")
+    })
 
 // })
 // // for update
