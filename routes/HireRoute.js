@@ -56,13 +56,13 @@ router.delete('/register_delete/:id', auth.verifyUser, function (req, res) {
         res.send("Deleted !")
     })
 
-// })
-// // for update
-// router.put('/register_update/:id', function (req, res) {
-//     const id = req.params.id;
-//     const book_name = req.body.book_name;
-//     Hire.updateOne({ _id: id }, { Email: Email }).then(function () {
-//         res.send("Updated!")
-//     })
-// })
-// module.exports = router;
+})
+// for update
+router.put('/register_update/:id', function (req, res) {
+    const id = req.params.id;
+    const book_name = req.body.book_name;
+    Hire.updateOne({ _id: id }, { Email: Email }).then(function () {
+        res.send("Updated!")
+    })
+})
+module.exports = router;
