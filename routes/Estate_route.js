@@ -82,7 +82,7 @@ router.delete('/estate/delete/:id', function (req, res) {
         })
 
 })
-
+//
 // for update
 router.put('/estate/update', function (req, res) {
     console.log(req.body)
