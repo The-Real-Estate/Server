@@ -97,24 +97,24 @@ router.get('/register_show', auth.verifyUser, function (req, res) {
     })
 })
 
-// // for delete
-// router.delete('/register_delete/:id', auth.verifyUser, function (req, res) {
-//     //delete code
-//     const id = req.params.id;
-//     Register.deleteOne({ _id: id }).then(function () {
-//         res.send("Deleted !")
-//     })
+ //for delete
+router.delete('/register_delete/:id', auth.verifyUser, function (req, res) {
+delete code
+  const id = req.params.id;
+     Register.deleteOne({ _id: id }).then(function () {
+         res.send("Deleted !")
+     })
 
-// })
-// // for update
-// router.put('/register_update/:id', function (req, res) {
-//     const id = req.params.id;
-//     const book_name = req.body.book_name;
-//     Register.updateOne({ _id: id }, { FullName: FullName },{Address:Address},{PhoneNo:PhoneNo},{Username:Username},{Password:Password}).then(function () {
-//         res.send("Updated!")
-//     })
+ })
+ // for update
+router.put('/register_update/:id', function (req, res) {
+    const id = req.params.id;
+    const book_name = req.body.book_name;
+   Register.updateOne({ _id: id }, { FullName: FullName },{Address:Address},{PhoneNo:PhoneNo},{Username:Username},{Password:Password}).then(function () {
+       res.send("Updated!")
+   })
 
-// })
+ })
 
 router.delete('/artist/delete/:id', function(req,res){
     //delete code
