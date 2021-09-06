@@ -1,5 +1,5 @@
 // use the path of your model
-const forbuyer = require('../models/register_model');
+const forhire = require('../models/HireModel');
 
 
 const mongoose = require('mongoose');
@@ -18,45 +18,33 @@ afterAll(async () => {
 describe('Register Test', () => {
 // the code below is for insert testing
  it('Register testing anything', () => {
- const fb = {
- 'FullName':'Bishal Budha',
- 'Address': 'Kapan',
- 'PhoneNo': '9868553378',
- 'Username':'bishal',
- 'Password':'bishal'
+ const fh = {
+ 'HireName':'Bishal Budha',
+ 'HirePhone': '9868553378',
+ 'ArtistName': 'bhatte',
+ 'ArtistPhone':'98696969',
+ 
  };
  
- return forbuyer.create(fb)
+ return forhire.create(fh)
  .then((pro_ret) => {
-expect(pro_ret.FullName).toEqual('Bishal Budha');
-expect(pro_ret.Address).toEqual('Kapan');
-expect(pro_ret.PhoneNo).toEqual('9868553378');
-expect(pro_ret.Username).toEqual('bishal');
-expect(pro_ret.Password).toEqual('bishal');
+expect(pro_ret.HireName).toEqual('Bishal Budha');
+expect(pro_ret.HirePhone).toEqual('9868553378');
+expect(pro_ret.ArtistName).toEqual('bhatte');
+expect(pro_ret.ArtistPhone).toEqual('98696969');
  });
  });
 })
 
-//login user test
-
-it("User Login testing", async()=>{
-    const fb ={
-        "Username":"bishal",
-        "Password":"bishal"
-    }
-    return forbuyer.findOne({fb});
-
-})
  //update user profile
 
-it("Update forbuyer profile", async()=>{
-    const pro = await forbuyer.updateOne({
-        "Username":Object("Bishal Budha")
+it("Update forhire profile", async()=>{
+    const pro = await forhire.updateOne({
+        "HireName":Object("Bishal Budha")
     },
     {
         $set:{
-            "PhoneNo":"981818181",
-            "Address":"test"
+            "HirePhone":"98696969",
         }
     })
     expect(pro.ok).toBe(1)
@@ -67,8 +55,8 @@ it("Update forbuyer profile", async()=>{
 //delete user profile
 
 it("delete profile",async()=>{
-    const status = await forbuyer.deleteOne({
-        "Username":Object("Bishal Budha")
+    const status = await forhire.deleteOne({
+        "HireName":Object("Bishal Budha")
     });
     expect(status.ok).toBe(1);
 }
